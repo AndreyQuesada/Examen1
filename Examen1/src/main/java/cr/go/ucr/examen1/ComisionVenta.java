@@ -3,17 +3,26 @@ package cr.go.ucr.examen1;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author JeArag
+ */
 public class ComisionVenta {
-    
-    private static final ComisionVenta currentInstance=new  ComisionVenta();
-    
+
+    private static final ComisionVenta currentInstance=new ComisionVenta();
+
     private ComisionVenta(){}
-    
+
     public List<Rango> rangos= Arrays.asList(new Rango(0.0,1500.00,0.03),
             new Rango(1500.01,5000.00,0.07),
             new Rango(5000.01,15000.00,0.12),
             new Rango(15000.00,100000.00,0.15));
-    
+
     public Double calcular(Double montoVentaMensual)
     {
         if(montoVentaMensual == null || montoVentaMensual < 0.0 ||  montoVentaMensual > 100000.00)
@@ -29,14 +38,14 @@ public class ComisionVenta {
     public static ComisionVenta getCurrentInstance() {
         return currentInstance;
     }
-    
-    
+
+
     public static void main(String args[])
     {
         System.out.println(ComisionVenta.getCurrentInstance().calcular(-0.01));
-                
-        
-        
+
+
+
     }
-    
+
 }
